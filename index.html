@@ -1,91 +1,530 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Etona — Privacy Policy</title>
-  <style>
-    /* Minimal, no shadows, white background, earthy accent */
-    :root{--bg:#ffffff;--text:#000000;--muted:#666666;--accent:#E6D5B8;--action:#FF6B6B;}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:var(--bg); color:var(--text); line-height:1.6;}
-    .wrap{max-width:900px;margin:32px auto;padding:24px;}
-    header{margin-bottom:20px;}
-    h1{margin:0 0 8px;font-size:28px;}
-    .lang-switch{font-size:14px;margin-top:6px;}
-    h2{font-size:18px;margin-top:20px;}
-    p{margin:10px 0;}
-    ul{margin:8px 0 16px 20px;}
-    .footer{margin-top:28px;font-size:14px;color:var(--muted);}
-    a{color:var(--action); text-decoration:none;}
-    .card{background:var(--accent); padding:16px; border-radius:12px; margin:12px 0;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etona - Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #007bff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .language-toggle {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .language-toggle button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .language-toggle button:hover {
+            background: #0056b3;
+        }
+
+        .language-toggle button.active {
+            background: #28a745;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .content h2 {
+            color: #007bff;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-left: 4px solid #007bff;
+            padding-left: 15px;
+        }
+
+        .content h3 {
+            color: #495057;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .contact-info {
+            background-color: #e7f3ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .contact-info h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+            color: #666;
+        }
+
+        /* RTL Support for Arabic */
+        .rtl {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .rtl h2 {
+            border-left: none;
+            border-right: 4px solid #007bff;
+            padding-left: 0;
+            padding-right: 15px;
+        }
+
+        .rtl ul {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
+        .rtl .highlight {
+            border-left: none;
+            border-right: 4px solid #ffc107;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .language-toggle button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Etona — Privacy Policy</h1>
-      <div class="lang-switch">This page is the English version. <a href="privacy-ar.html">العربية</a></div>
-    </header>
+    <div class="container">
+        <div class="header">
+            <h1>Etona — Privacy Policy</h1>
+            <div class="language-toggle">
+                <button onclick="showLanguage('en')" id="en-btn" class="active">English</button>
+                <button onclick="showLanguage('ar')" id="ar-btn">العربية</button>
+            </div>
+        </div>
 
-    <p>Last updated: <strong>2025-09-09</strong></p>
+        <!-- English Version -->
+        <div id="en-content" class="content active">
+            <div class="last-updated">
+                Last updated: January 9, 2025
+            </div>
 
-    <h2>Introduction</h2>
-    <p>This Privacy Policy explains how Etona ("we", "us", "our") collects, uses, shares, and protects personal information when you use our mobile application Etona (the "App"). By using the App you agree to the collection and use of information as described in this policy.</p>
+            <h2>1. Introduction</h2>
+            <p>Etona ("we", "us", "our", "the Company") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you use our mobile application Etona (the "App" or "Service").</p>
+            <p>By downloading, installing, or using our App, you agree to the collection and use of information in accordance with this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not use our Service.</p>
 
-    <h2>Data we collect</h2>
-    <ul>
-      <li><strong>Account info:</strong> email, display name, profile photo (optional).</li>
-      <li><strong>Contact info:</strong> phone number, address (optional).</li>
-      <li><strong>Appointments:</strong> booking date/time, barber id, client id, status.</li>
-      <li><strong>Device data:</strong> device type, OS version, analytics for app performance.</li>
-    </ul>
+            <h2>2. Information We Collect</h2>
+            
+            <h3>2.1 Personal Information You Provide</h3>
+            <ul>
+                <li>Account Information: Email address, display name, profile photo (optional)</li>
+                <li>Contact Information: Phone number, physical address (optional)</li>
+                <li>Appointment Data: Booking date and time, barber ID, client ID, appointment status, service preferences</li>
+                <li>Communication Data: Messages sent through the app, feedback, and support requests</li>
+            </ul>
 
-    <h2>Why we collect data</h2>
-    <ul>
-      <li>To provide and manage appointments and user profiles.</li>
-      <li>To send booking confirmations and status updates.</li>
-      <li>To improve the app and fix bugs.</li>
-      <li>To comply with legal obligations.</li>
-    </ul>
+            <h3>2.2 Information We Collect Automatically</h3>
+            <ul>
+                <li>Device Information: Device type, operating system version, unique device identifiers</li>
+                <li>Usage Data: App features used, time spent in app, pages viewed, click patterns</li>
+                <li>Location Data: Approximate location (if you grant permission) to help find nearby barbers</li>
+                <li>Analytics Data: App performance metrics, crash reports, error logs</li>
+            </ul>
 
-    <h2>How we share data</h2>
-    <p>We do not sell personal data. We may share data with:</p>
-    <ul>
-      <li>Service providers (e.g., hosting, analytics) who process data on our behalf.</li>
-      <li>When required by law or to protect rights and safety.</li>
-    </ul>
+            <h3>2.3 Information from Third Parties</h3>
+            <ul>
+                <li>Social Media: If you choose to sign in through social media platforms</li>
+                <li>Payment Processors: Transaction information (if applicable)</li>
+                <li>Analytics Providers: Aggregated usage statistics</li>
+            </ul>
 
-    <div class="card">
-      <strong>Note:</strong> Barber public profile information (name, services, opening hours) is visible to app users so clients can browse and book.
+            <h2>3. Legal Basis for Processing</h2>
+            <p>We process your personal data based on:</p>
+            <ul>
+                <li><strong>Consent:</strong> When you voluntarily provide information</li>
+                <li><strong>Contract Performance:</strong> To provide our booking services</li>
+                <li><strong>Legitimate Interest:</strong> To improve our services and prevent fraud</li>
+                <li><strong>Legal Obligation:</strong> To comply with applicable laws</li>
+            </ul>
+
+            <h2>4. How We Use Your Information</h2>
+            <p>We use the collected information to:</p>
+            <ul>
+                <li>Provide and maintain our booking services</li>
+                <li>Process appointments and send confirmations</li>
+                <li>Communicate with you about your bookings and account</li>
+                <li>Improve app functionality and user experience</li>
+                <li>Prevent fraud and ensure security</li>
+                <li>Comply with legal obligations</li>
+                <li>Send marketing communications (with your consent)</li>
+            </ul>
+
+            <h2>5. Information Sharing and Disclosure</h2>
+            
+            <div class="highlight">
+                <strong>We Do Not Sell Personal Data</strong><br>
+                We do not sell, trade, or rent your personal information to third parties.
+            </div>
+
+            <h3>5.1 When We Share Information</h3>
+            <p>We may share your information in the following circumstances:</p>
+            <ul>
+                <li><strong>Service Providers:</strong> With trusted third parties who assist in app operations (hosting, analytics, customer support)</li>
+                <li><strong>Business Transfers:</strong> In connection with mergers, acquisitions, or asset sales</li>
+                <li><strong>Legal Requirements:</strong> When required by law or to protect our rights and safety</li>
+                <li><strong>Public Information:</strong> Barber profiles (name, services, hours) are visible to help clients browse and book</li>
+            </ul>
+
+            <h3>5.2 International Data Transfers</h3>
+            <p>Your data may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place for such transfers.</p>
+
+            <h2>6. Data Security</h2>
+            <p>We implement appropriate technical and organizational measures to protect your personal information:</p>
+            <ul>
+                <li>Encryption of data in transit and at rest</li>
+                <li>Regular security assessments and updates</li>
+                <li>Access controls and authentication</li>
+                <li>Secure data centers and infrastructure</li>
+            </ul>
+            <p><strong>Note:</strong> No method of transmission over the internet or electronic storage is 100% secure. While we strive to protect your personal information, we cannot guarantee absolute security.</p>
+
+            <h2>7. Data Retention</h2>
+            <p>We retain your personal information only as long as necessary to:</p>
+            <ul>
+                <li>Provide our services</li>
+                <li>Comply with legal obligations</li>
+                <li>Resolve disputes and enforce agreements</li>
+            </ul>
+            <p>Appointment records may be retained for up to 7 years for operational and legal purposes. You may request deletion of your account and associated data by contacting us.</p>
+
+            <h2>8. Your Rights and Choices</h2>
+            <p>Depending on your location, you may have the following rights:</p>
+            <ul>
+                <li><strong>Access:</strong> Request copies of your personal data</li>
+                <li><strong>Rectification:</strong> Correct inaccurate or incomplete data</li>
+                <li><strong>Erasure:</strong> Request deletion of your personal data</li>
+                <li><strong>Portability:</strong> Receive your data in a structured format</li>
+                <li><strong>Restriction:</strong> Limit how we process your data</li>
+                <li><strong>Objection:</strong> Object to certain types of processing</li>
+                <li><strong>Withdraw Consent:</strong> Withdraw consent for data processing</li>
+            </ul>
+            <p>To exercise these rights, contact us at: <strong>etona030825@gmail.com</strong></p>
+
+            <h2>9. Third-Party Services</h2>
+            <p>Our App integrates with:</p>
+            <ul>
+                <li><strong>Firebase (Google):</strong> Authentication and database services</li>
+                <li><strong>Analytics providers:</strong> For app performance monitoring</li>
+                <li><strong>Payment processors:</strong> For transaction processing (if applicable)</li>
+            </ul>
+            <p>These third parties have their own privacy policies. We encourage you to review them.</p>
+
+            <h2>10. Cookies and Tracking Technologies</h2>
+            <p>We use cookies and similar technologies to:</p>
+            <ul>
+                <li>Remember your preferences</li>
+                <li>Analyze app usage</li>
+                <li>Improve user experience</li>
+            </ul>
+            <p>You can control cookie settings through your device or browser preferences.</p>
+
+            <h2>11. Children's Privacy</h2>
+            <p>Our App is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+
+            <h2>12. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
+            <ul>
+                <li>Posting the new Privacy Policy on this page</li>
+                <li>Updating the "Last updated" date</li>
+                <li>Sending you an email notification (for significant changes)</li>
+            </ul>
+            <p>Your continued use of the Service after any modifications constitutes acceptance of the updated Privacy Policy.</p>
+
+            <div class="contact-info">
+                <h3>13. Contact Information</h3>
+                <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+                <p><strong>Email:</strong> etona030825@gmail.com<br>
+                <strong>Company:</strong> Etona<br>
+                <strong>Address:</strong> [Your Business Address]<br>
+                <strong>Data Protection Officer:</strong> [If applicable]</p>
+            </div>
+
+            <h2>14. Governing Law</h2>
+            <p>This Privacy Policy is governed by the laws of [Your Jurisdiction] and any disputes will be resolved in the courts of [Your Jurisdiction].</p>
+        </div>
+
+        <!-- Arabic Version -->
+        <div id="ar-content" class="content rtl">
+            <div class="last-updated">
+                آخر تحديث: 9 يناير 2025
+            </div>
+
+            <h2>1. مقدمة</h2>
+            <p>تلتزم إيتونا ("نحن"، "لنا"، "شركتنا") بحماية خصوصيتك. تشرح سياسة الخصوصية هذه كيفية جمعنا واستخدامنا والكشف عن معلوماتك الشخصية وحمايتها عند استخدام تطبيقنا المحمول إيتونا ("التطبيق" أو "الخدمة").</p>
+            <p>بتحميل أو تثبيت أو استخدام تطبيقنا، فإنك توافق على جمع واستخدام المعلومات وفقاً لسياسة الخصوصية هذه. إذا كنت لا توافق على شروط سياسة الخصوصية هذه، يرجى عدم استخدام خدمتنا.</p>
+
+            <h2>2. المعلومات التي نجمعها</h2>
+            
+            <h3>2.1 المعلومات الشخصية التي تقدمها</h3>
+            <ul>
+                <li>معلومات الحساب: عنوان البريد الإلكتروني، اسم العرض، صورة الملف الشخصي (اختيارية)</li>
+                <li>معلومات الاتصال: رقم الهاتف، العنوان الفعلي (اختياري)</li>
+                <li>بيانات المواعيد: تاريخ ووقت الحجز، معرف الحلاق، معرف العميل، حالة الموعد، تفضيلات الخدمة</li>
+                <li>بيانات التواصل: الرسائل المرسلة عبر التطبيق، التعليقات، وطلبات الدعم</li>
+            </ul>
+
+            <h3>2.2 المعلومات التي نجمعها تلقائياً</h3>
+            <ul>
+                <li>معلومات الجهاز: نوع الجهاز، إصدار نظام التشغيل، معرفات الجهاز الفريدة</li>
+                <li>بيانات الاستخدام: الميزات المستخدمة في التطبيق، الوقت المستغرق في التطبيق، الصفحات المشاهدة، أنماط النقر</li>
+                <li>بيانات الموقع: الموقع التقريبي (إذا منحت الإذن) لمساعدتك في العثور على الحلاقين القريبين</li>
+                <li>بيانات التحليلات: مقاييس أداء التطبيق، تقارير الأعطال، سجلات الأخطاء</li>
+            </ul>
+
+            <h3>2.3 المعلومات من الأطراف الثالثة</h3>
+            <ul>
+                <li>وسائل التواصل الاجتماعي: إذا اخترت تسجيل الدخول عبر منصات وسائل التواصل الاجتماعي</li>
+                <li>معالجات الدفع: معلومات المعاملات (إذا كانت قابلة للتطبيق)</li>
+                <li>مقدمي التحليلات: إحصائيات الاستخدام المجمعة</li>
+            </ul>
+
+            <h2>3. الأساس القانوني للمعالجة</h2>
+            <p>نحن نعالج بياناتك الشخصية على أساس:</p>
+            <ul>
+                <li><strong>الموافقة:</strong> عندما تقدم المعلومات طوعياً</li>
+                <li><strong>تنفيذ العقد:</strong> لتقديم خدمات الحجز لدينا</li>
+                <li><strong>المصلحة المشروعة:</strong> لتحسين خدماتنا ومنع الاحتيال</li>
+                <li><strong>الالتزام القانوني:</strong> للامتثال للقوانين المعمول بها</li>
+            </ul>
+
+            <h2>4. كيفية استخدامنا لمعلوماتك</h2>
+            <p>نستخدم المعلومات المجمعة لـ:</p>
+            <ul>
+                <li>تقديم وصيانة خدمات الحجز لدينا</li>
+                <li>معالجة المواعيد وإرسال التأكيدات</li>
+                <li>التواصل معك حول حجوزاتك وحسابك</li>
+                <li>تحسين وظائف التطبيق وتجربة المستخدم</li>
+                <li>منع الاحتيال وضمان الأمان</li>
+                <li>الامتثال للالتزامات القانونية</li>
+                <li>إرسال الاتصالات التسويقية (بموافقتك)</li>
+            </ul>
+
+            <h2>5. مشاركة المعلومات والكشف عنها</h2>
+            
+            <div class="highlight">
+                <strong>نحن لا نبيع البيانات الشخصية</strong><br>
+                نحن لا نبيع أو نتاجر أو نؤجر معلوماتك الشخصية لأطراف ثالثة.
+            </div>
+
+            <h3>5.1 متى نشارك المعلومات</h3>
+            <p>قد نشارك معلوماتك في الحالات التالية:</p>
+            <ul>
+                <li><strong>مقدمي الخدمات:</strong> مع أطراف ثالثة موثوقة تساعد في عمليات التطبيق (الاستضافة، التحليلات، دعم العملاء)</li>
+                <li><strong>نقل الأعمال:</strong> في حالة الاندماج أو الاستحواذ أو بيع الأصول</li>
+                <li><strong>المتطلبات القانونية:</strong> عندما يتطلب القانون أو لحماية حقوقنا وسلامتنا</li>
+                <li><strong>المعلومات العامة:</strong> ملفات الحلاقين الشخصية (الاسم، الخدمات، ساعات العمل) مرئية لمساعدة العملاء في التصفح والحجز</li>
+            </ul>
+
+            <h3>5.2 نقل البيانات الدولية</h3>
+            <p>قد يتم نقل بياناتك ومعالجتها في بلدان أخرى غير بلدك. نحن نضمن وجود الضمانات المناسبة لمثل هذه التحويلات.</p>
+
+            <h2>6. أمان البيانات</h2>
+            <p>نطبق التدابير التقنية والتنظيمية المناسبة لحماية معلوماتك الشخصية:</p>
+            <ul>
+                <li>تشفير البيانات أثناء النقل والتخزين</li>
+                <li>تقييمات وتحديثات الأمان المنتظمة</li>
+                <li>ضوابط الوصول والمصادقة</li>
+                <li>مراكز البيانات والبنية التحتية الآمنة</li>
+            </ul>
+            <p><strong>ملاحظة:</strong> لا توجد طريقة نقل عبر الإنترنت أو التخزين الإلكتروني آمنة بنسبة 100%. بينما نسعى لحماية معلوماتك الشخصية، لا يمكننا ضمان الأمان المطلق.</p>
+
+            <h2>7. الاحتفاظ بالبيانات</h2>
+            <p>نحتفظ بمعلوماتك الشخصية فقط طالما كان ذلك ضرورياً لـ:</p>
+            <ul>
+                <li>تقديم خدماتنا</li>
+                <li>الامتثال للالتزامات القانونية</li>
+                <li>حل النزاعات وإنفاذ الاتفاقيات</li>
+            </ul>
+            <p>قد يتم الاحتفاظ بسجلات المواعيد لمدة تصل إلى 7 سنوات لأغراض تشغيلية وقانونية. يمكنك طلب حذف حسابك والبيانات المرتبطة به عن طريق الاتصال بنا.</p>
+
+            <h2>8. حقوقك وخياراتك</h2>
+            <p>اعتماداً على موقعك، قد تكون لديك الحقوق التالية:</p>
+            <ul>
+                <li><strong>الوصول:</strong> طلب نسخ من بياناتك الشخصية</li>
+                <li><strong>التصحيح:</strong> تصحيح البيانات غير الدقيقة أو غير المكتملة</li>
+                <li><strong>المحو:</strong> طلب حذف بياناتك الشخصية</li>
+                <li><strong>قابلية النقل:</strong> استلام بياناتك بتنسيق منظم</li>
+                <li><strong>التقييد:</strong> تحديد كيفية معالجة بياناتك</li>
+                <li><strong>الاعتراض:</strong> الاعتراض على أنواع معينة من المعالجة</li>
+                <li><strong>سحب الموافقة:</strong> سحب الموافقة على معالجة البيانات</li>
+            </ul>
+            <p>لممارسة هذه الحقوق، اتصل بنا على: <strong>etona030825@gmail.com</strong></p>
+
+            <h2>9. خدمات الأطراف الثالثة</h2>
+            <p>يتكامل تطبيقنا مع:</p>
+            <ul>
+                <li><strong>Firebase (جوجل):</strong> خدمات المصادقة وقاعدة البيانات</li>
+                <li><strong>مقدمي التحليلات:</strong> لمراقبة أداء التطبيق</li>
+                <li><strong>معالجات الدفع:</strong> لمعالجة المعاملات (إذا كانت قابلة للتطبيق)</li>
+            </ul>
+            <p>هذه الأطراف الثالثة لديها سياسات خصوصية خاصة بها. نشجعك على مراجعتها.</p>
+
+            <h2>10. ملفات تعريف الارتباط وتقنيات التتبع</h2>
+            <p>نستخدم ملفات تعريف الارتباط والتقنيات المماثلة لـ:</p>
+            <ul>
+                <li>تذكر تفضيلاتك</li>
+                <li>تحليل استخدام التطبيق</li>
+                <li>تحسين تجربة المستخدم</li>
+            </ul>
+            <p>يمكنك التحكم في إعدادات ملفات تعريف الارتباط من خلال جهازك أو تفضيلات المتصفح.</p>
+
+            <h2>11. خصوصية الأطفال</h2>
+            <p>تطبيقنا غير مخصص للأطفال دون سن 13 عاماً. نحن لا نجمع معلومات شخصية من الأطفال دون سن 13 عاماً. إذا كنت والداً أو وصياً وتعتقد أن طفلك قد زودنا بمعلومات شخصية، يرجى الاتصال بنا.</p>
+
+            <h2>12. التغييرات على سياسة الخصوصية هذه</h2>
+            <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنخطرك بأي تغييرات من خلال:</p>
+            <ul>
+                <li>نشر سياسة الخصوصية الجديدة على هذه الصفحة</li>
+                <li>تحديث تاريخ "آخر تحديث"</li>
+                <li>إرسال إشعار بالبريد الإلكتروني (للتغييرات المهمة)</li>
+            </ul>
+            <p>استمرارك في استخدام الخدمة بعد أي تعديلات يشكل قبولاً لسياسة الخصوصية المحدثة.</p>
+
+            <div class="contact-info">
+                <h3>13. معلومات الاتصال</h3>
+                <p>إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه أو ممارسات البيانات لدينا، يرجى الاتصال بنا:</p>
+                <p><strong>البريد الإلكتروني:</strong> etona030825@gmail.com<br>
+                <strong>الشركة:</strong> إيتونا<br>
+                <strong>العنوان:</strong> [عنوان عملك]<br>
+                <strong>مسؤول حماية البيانات:</strong> [إذا كان قابلاً للتطبيق]</p>
+            </div>
+
+            <h2>14. القانون الحاكم</h2>
+            <p>تخضع سياسة الخصوصية هذه لقوانين [ولايتك القضائية] وستتم تسوية أي نزاعات في محاكم [ولايتك القضائية].</p>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Etona. All rights reserved.</p>
+        </div>
     </div>
 
-    <h2>Data retention</h2>
-    <p>We retain personal data as long as necessary to provide the service and to meet legal obligations. Appointment records may be retained for operational and support reasons. You can request deletion by contacting us.</p>
+    <script>
+        function showLanguage(lang) {
+            // Hide all content
+            document.getElementById('en-content').classList.remove('active');
+            document.getElementById('ar-content').classList.remove('active');
+            
+            // Remove active class from all buttons
+            document.getElementById('en-btn').classList.remove('active');
+            document.getElementById('ar-btn').classList.remove('active');
+            
+            // Show selected content and activate button
+            if (lang === 'en') {
+                document.getElementById('en-content').classList.add('active');
+                document.getElementById('en-btn').classList.add('active');
+            } else {
+                document.getElementById('ar-content').classList.add('active');
+                document.getElementById('ar-btn').classList.add('active');
+            }
+        }
 
-    <h2>Your rights</h2>
-    <ul>
-      <li>Access your personal data.</li>
-      <li>Request correction or deletion of your data.</li>
-      <li>Object to processing where applicable.</li>
-    </ul>
-    <p>To exercise these rights, contact us at: <a href="mailto:etona030825@gmail.com">etona030825@gmail.com</a> (replace with your support email).</p>
-
-    <h2>Security</h2>
-    <p>We use industry standard measures to protect data in transit and at rest. No method of transmission over the internet is 100% secure; we cannot guarantee absolute security.</p>
-
-    <h2>Third-party services</h2>
-    <p>We use Firebase for authentication and database, and may use analytics providers. Please refer to their privacy policies for details.</p>
-
-    <h2>Children</h2>
-    <p>Our App is not intended for children under 13. We do not knowingly collect personal data from children under 13.</p>
-
-    <h2>Changes to this policy</h2>
-    <p>We may update this policy; we will post the date of last update here.</p>
-
-    <div class="footer">
-      <p>Contact: <a href="mailto:etona030825@gmail.com">etona030825@gmail.com</a></p>
-      <p>Company: Etona</p>
-    </div>
-  </div>
+        // Set initial language based on browser language
+        document.addEventListener('DOMContentLoaded', function() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('ar')) {
+                showLanguage('ar');
+            } else {
+                showLanguage('en');
+            }
+        });
+    </script>
 </body>
 </html>
+
